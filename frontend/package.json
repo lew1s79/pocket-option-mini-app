@@ -1,10 +1,10 @@
 {
   "name": "pocket-option-frontend",
   "version": "1.0.0",
-  "description": "Frontend for Pocket Option Telegram Mini App",
   "scripts": {
     "dev": "parcel public/index.html",
-    "build": "parcel build public/index.html"
+    "build": "parcel build public/index.html --public-url ./",
+    "start": "parcel public/index.html"
   },
   "dependencies": {
     "chart.js": "^4.3.0",
