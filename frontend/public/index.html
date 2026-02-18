@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocket Option Analyzer</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="/src/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="main-card">
+            <div class="asset-row">
+                <span class="asset-label">Валюта</span>
+                <span class="asset-value" id="selectedAsset">BTC/USDT</span>
+                <button class="select-btn" id="selectAsset">▼</button>
+            </div>
+            
+            <div class="asset-row">
+                <span class="asset-label">Время</span>
+                <span class="asset-value" id="selectedTimeframe">1 минута</span>
+                <button class="select-btn" id="selectTimeframe">▼</button>
+            </div>
+            
+            <button class="get-signals-btn" id="getSignals">
+                Получать сигналы
+            </button>
+        </div>
+
+        <div class="result-card" id="resultCard" style="display: none;">
+            <div class="result-header" id="currentAssetDisplay">BTC/USDT</div>
+            
+            <div class="result-row">
+                <span class="result-label">Прогноз</span>
+                <span class="result-value" id="trend">📈 Вверх</span>
+            </div>
+            
+            <div class="result-row">
+                <span class="result-label">Цена</span>
+                <span class="price-value" id="currentPrice">50000.00</span>
+            </div>
+            
+            <div class="result-row">
+                <span class="result-label">Точность</span>
+                <span class="accuracy-value" id="accuracy">78%</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="assetModal">
+        <div class="modal-header">
+            <h2>Выберите актив</h2>
+            <button class="modal-close" id="closeModal">×</button>
+        </div>
+        <div class="modal-content" id="assetList">
+            <!-- Список будет загружен через JS -->
+        </div>
+    </div>
+
+    <div class="modal" id="timeframeModal">
+        <div class="modal-header">
+            <h2>Выберите время</h2>
+            <button class="modal-close" id="closeTimeframeModal">×</button>
+        </div>
+        <div class="modal-content" id="timeframeList">
+            <!-- Список таймфреймов -->
+        </div>
+    </div>
+
+    <script src="/src/js/app.js"></script>
+</body>
+</html>
